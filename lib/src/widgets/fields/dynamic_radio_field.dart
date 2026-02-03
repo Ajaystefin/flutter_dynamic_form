@@ -40,21 +40,34 @@ class DynamicRadioField extends StatelessWidget {
             ),
 
             // Radio options
-            if (config.direction == Axis.vertical)
-              ...config.options.map(
-                (option) => _buildRadioTile(context, option, currentValue),
-              )
-            else
-              Wrap(
-                spacing: 16.0,
-                children:
-                    config.options
-                        .map(
-                          (option) =>
-                              _buildRadioTile(context, option, currentValue),
-                        )
-                        .toList(),
-              ),
+            RadioGroup<String>(
+              groupValue: currentValue,
+              onChanged: (value) {
+                if (value != null) {
+                  controller.setValue(config.id, value);
+                }
+              },
+              child:
+                  config.direction == Axis.vertical
+                      ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:
+                            config.options
+                                .map(
+                                  (option) => _buildRadioTile(context, option),
+                                )
+                                .toList(),
+                      )
+                      : Wrap(
+                        spacing: 16.0,
+                        children:
+                            config.options
+                                .map(
+                                  (option) => _buildRadioTile(context, option),
+                                )
+                                .toList(),
+                      ),
+            ),
 
             // Error message
             if (error != null)
@@ -74,25 +87,13 @@ class DynamicRadioField extends StatelessWidget {
     );
   }
 
-  Widget _buildRadioTile(
-    BuildContext context,
-    RadioOption option,
-    String? currentValue,
-  ) {
+  Widget _buildRadioTile(BuildContext context, RadioOption option) {
     return InkWell(
       onTap: () => controller.setValue(config.id, option.value),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Radio<String>(
-            value: option.value,
-            groupValue: currentValue,
-            onChanged: (value) {
-              if (value != null) {
-                controller.setValue(config.id, value);
-              }
-            },
-          ),
+          Radio<String>(value: option.value),
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

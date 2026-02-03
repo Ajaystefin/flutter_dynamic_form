@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 1.0.1
 
+- Fixed linting issues (RegExp and Radio widget deprecations).
+- Updated standard lint configuration to `flutter_lints`.
 - Rename package to `adaptive_form`.
 
 ## [1.0.0] - 2026-02-03
