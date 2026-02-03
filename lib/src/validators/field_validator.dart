@@ -52,7 +52,7 @@ abstract class FieldValidator {
   /// ```dart
   /// FieldValidator.pattern(RegExp(r'^\d+$'), 'Only numbers allowed')
   /// ```
-  factory FieldValidator.pattern(RegExp pattern, [String message]) =
+  factory FieldValidator.pattern(Pattern pattern, [String message]) =
       PatternValidator;
 }
 
@@ -79,9 +79,9 @@ class EmailValidator implements FieldValidator {
   final String message;
 
   /// Regular expression for email validation.
-  static final _emailRegex = RegExp(
-    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-  );
+  static final _emailRegex =
+  // ignore: deprecated_member_use
+  RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
 
   /// Creates an email validator.
   const EmailValidator([this.message = 'Please enter a valid email address']);
@@ -117,7 +117,7 @@ class MinLengthValidator implements FieldValidator {
 /// Validator that checks if a value matches a regular expression pattern.
 class PatternValidator implements FieldValidator {
   /// Regular expression pattern to match.
-  final RegExp pattern;
+  final Pattern pattern;
 
   /// Error message to display when validation fails.
   final String message;
@@ -128,7 +128,7 @@ class PatternValidator implements FieldValidator {
   @override
   String? validate(dynamic value) {
     if (value == null || value.toString().isEmpty) return null;
-    if (!pattern.hasMatch(value.toString())) return message;
+    if (!value.toString().contains(pattern)) return message;
     return null;
   }
 }

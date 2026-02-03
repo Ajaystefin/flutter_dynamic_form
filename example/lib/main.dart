@@ -78,6 +78,7 @@ class _DynamicFormExampleState extends State<DynamicFormExample> {
           prefixIcon: Icons.phone,
           validators: [
             FieldValidator.pattern(
+              // ignore: deprecated_member_use
               RegExp(r'^\d{10}$'),
               'Phone must be 10 digits',
             ),
