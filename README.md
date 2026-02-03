@@ -1,5 +1,9 @@
 # flutter_dynamic_form
 
+> [!WARNING]
+> 🚧 **Under Maintenance** 🚧
+> This package is currently under active development. APIs are subject to change continuously. Do not use in production.
+
 A flexible, extensible Flutter package for building dynamic forms from configuration. Supports TextField, RadioButton, DatePicker, and custom field types.
 
 ## Features
