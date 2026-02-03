@@ -1,7 +1,7 @@
 name: flutter_dynamic_form
 description: A flexible, extensible Flutter package for building dynamic forms from configuration. Supports TextField, RadioButton, DatePicker, and custom field types.
 version: 1.0.0
-repository: https://github.com/yourusername/flutter_dynamic_form
+repository: https://github.com/Ajaystefin/flutter_dynamic_form
 
 environment:
   sdk: ^3.7.2
