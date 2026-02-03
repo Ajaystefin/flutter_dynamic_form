@@ -1,4 +1,4 @@
-# flutter_dynamic_form
+# adaptive_form
 
 > [!WARNING]
 > 🚧 **Under Maintenance** 🚧
@@ -21,7 +21,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_dynamic_form: ^1.0.0
+  adaptive_form: ^1.0.0
 ```
 
 Then run:

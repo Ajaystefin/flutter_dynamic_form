@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dynamic_form/flutter_dynamic_form.dart';
+import 'package:adaptive_form/adaptive_form.dart';
 
 void main() {
   // Register custom field types here if needed

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_dynamic_form/flutter_dynamic_form.dart';
+import 'package:adaptive_form/adaptive_form.dart';
 
 void main() {
   group('DynamicFormField', () {
